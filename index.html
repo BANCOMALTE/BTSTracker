@@ -193,7 +193,7 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
     
 
 		L.marker(e.latlng, {icon: L.icon({iconUrl: 'https://cdn.lteitaly.it/markers/gps.png', iconSize: [20, 20]})}).addTo(map)
-			.bindPopup("Sei all'incirca a  " + radius + " metri da questo punto").openPopup();
+			
 
 		map.setView([e.latitude,e.longitude]);
 	}
