@@ -188,27 +188,24 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
 
   }); */
   
-  function trackLocation () {
-      map.locate({
-          watch: true,
-          enableHighAccuracy: true,
-          
-      }).on('locationfound', (e) => {
-        
-              cpos = L.marker([e.latitude, e.longitude], {icon: L.icon({iconUrl: 'https://cdn.lteitaly.it/markers/gps.png', iconSize: [20, 20]})});
-              cpos.addTo(map);
-              map.setView([e.latitude, e.longitude]);
-       
-      })
-  }
-  function onLocationError(e) {
+ function onLocationFound(e) {
+		var radius = e.accuracy / 2;
+    map.setView([e.latitude,e.longitude]);
+
+		L.marker(e.latlng).addTo(map)
+			.bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+		
+	}
+
+	function onLocationError(e) {
 		alert(e.message);
 	}
 
-	map.on('locationfound', trackLocation);
+	map.on('locationfound', onLocationFound);
 	map.on('locationerror', onLocationError);
 
-	map.locate({setView: true, maxZoom: 16});
+	map.locate({setView: true, maxZoom: 16, watch: true});
 	  //Creazione del pulsante per eliminare il marker di ricerca
         let btn = document.createElement('button');
         btn.innerText = 'Delete Marker';
