@@ -67,7 +67,7 @@ var followme = "vero";
 
 var map = L.map('map', {
         center: [ 42.00,15.00 ], //map loads with this location as center
-        zoom: 16,
+        zoom: 10,
         maxZoom: 19,
         layers: [osm] // Show 'streets' by default
 });
@@ -205,7 +205,7 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
 	map.on('locationfound', onLocationFound);
 	map.on('locationerror', onLocationError);
 
-	map.locate({setView: true, maxZoom: 15,  watch: true});
+	map.locate({setView: true, maxZoom: 16,  watch: true});
 	  //Creazione del pulsante per eliminare il marker di ricerca
         let btn = document.createElement('button');
         btn.innerText = 'Delete Marker';
