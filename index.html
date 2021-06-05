@@ -192,7 +192,7 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
       map.locate({
           watch: true,
           enableHighAccuracy: true,
-          timeout: 100000
+         
       }).on('locationfound', (e) => {
         if (!cpos) {
               cpos = L.marker([e.latitude, e.longitude], {icon: L.icon({iconUrl: 'https://cdn.lteitaly.it/markers/gps.png', iconSize: [20, 20]})});
