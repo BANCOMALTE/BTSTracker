@@ -208,7 +208,9 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
         btn.onclick =  function() {
           map.removeLayer(results);
         }
-      
+      L.control.locate({
+            position: "bottomright"
+        }).addTo(map);
  //Qui definisco l'icona del marker di ricerca
 	    
 var searchicon = L.icon({
@@ -233,6 +235,8 @@ var searchControl = new L.esri.Controls.Geosearch().addTo(map);
                 }
               });
            
+              map.addControl(new L.Control.Permalink({ useLocation: true, text: null })); */
+	  
 	  
   </script>
 </body>
