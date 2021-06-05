@@ -189,11 +189,7 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
   }); */
   
  function onLocationFound(e) {
-		var radius = e.accuracy / 2;
-    
-
-		L.marker(e.latlng, {icon: L.icon({iconUrl: 'https://cdn.lteitaly.it/markers/gps.png', iconSize: [20, 20]})}).addTo(map)
-			
+		
 
 		map.setView([e.latitude,e.longitude]);
 	}
