@@ -78,7 +78,7 @@ L.control.layers({
     }, null, {
         position: "topright"
     }).addTo(map);
-    var cpos = false;
+   
 
 /*
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
@@ -212,10 +212,7 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
         btn.onclick =  function() {
           map.removeLayer(results);
         }
-      /*
- L.control.locate({
-            position: "bottomright"
-        }).addTo(map); */
+      
  //Qui definisco l'icona del marker di ricerca
 	    
 var searchicon = L.icon({
@@ -225,7 +222,7 @@ var searchicon = L.icon({
     iconSize:     [38, 38], // size of the icon
     
   
-}); /*
+}); 
 //Qui definisco e setto la ricerca per indirizzo e la localizzazione dell'utente mediante il gps
 var searchControl = new L.esri.Controls.Geosearch().addTo(map);
 
@@ -239,7 +236,7 @@ var searchControl = new L.esri.Controls.Geosearch().addTo(map);
 })),map.addLayer(results);
                 }
               });
-              map.addControl(new L.Control.Permalink({ useLocation: true, text: null })); */
+           
 	  
   </script>
 </body>
