@@ -209,7 +209,8 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
           map.removeLayer(results);
         }
       L.control.locate({
-            position: "bottomright"
+            position: "bottomright",
+locateOptions: { enableHighAccuracy: true }
         }).addTo(map);
  //Qui definisco l'icona del marker di ricerca
 	    
