@@ -192,17 +192,13 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
       map.locate({
           watch: true,
           enableHighAccuracy: true,
-         
+          
       }).on('locationfound', (e) => {
-        if (!cpos) {
+        
               cpos = L.marker([e.latitude, e.longitude], {icon: L.icon({iconUrl: 'https://cdn.lteitaly.it/markers/gps.png', iconSize: [20, 20]})});
               cpos.addTo(map);
-              map.setView([e.latitude, e.longitude],15);
-          } else if(followme == "vero"){
-              map.setView([e.latitude,e.longitude]);
-          } else {
-              cpos.setLatLng([e.latitude, e.longitude]);
-          }
+              map.setView([e.latitude, e.longitude]);
+       
       })
   }
   function onLocationError(e) {
