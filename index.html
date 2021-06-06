@@ -47,7 +47,7 @@
 
   <!-- Insert Javascript (.js) code to create the map -->
   <script>
-var followme = "vero";
+
   
 
 // Add layers that we need to the map
@@ -96,6 +96,10 @@ var markers = L.markerClusterGroup({disableClusteringAtZoom: 20});
 	var frequenze;
 	    var iconemarker;
 	    var statoverifica;
+	    var fotografata = L.icon({
+    iconUrl: 'https://cdn.lteitaly.it/markers/supplier/1.png',
+   iconSize: [38, 38],iconAnchor:  [19, 38],popupAnchor:  [0, -34] // point from which the popup should open relative to the iconAnchor
+});
 if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
     iconUrl: 'b20.png',
    iconSize: [38, 38],iconAnchor:  [19, 38],popupAnchor:  [0, -34] // point from which the popup should open relative to the iconAnchor
@@ -178,6 +182,9 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
 }); } 
 	    var marker = L.marker([row.Latitudine, row.Longitudine], {icon: iconemarker}).bindPopup("<b>LAT:</b> " + row.Latitudine + "<br /><b>LON:</b> " + row.Longitudine + "<br /><b>ENODEB:</b> " + row.eNb + "<br /><b>NOME SITO:</b> " + row.Nomesito + "<br /><b>BANDE:</b> " + frequenze + "<br /><b>PRIMO RILEVAMENTO:</b> " + row.Primorilevamento + "<br />").openPopup();
       marker.bindTooltip("<span>" + row.eNb + "</span>" , {permanent: true, direction: 'bottom'}).openTooltip();
+	    marker.on('click', function(h) {
+    marker.setIcon(fotografata);
+});
    markers.addLayer(marker); //Aggiungo il layer della mappa a quello dei cluster
 
         map.addLayer(markers);  }
