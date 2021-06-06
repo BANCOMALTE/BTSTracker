@@ -194,7 +194,7 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
 
   }); 
   map.on("dblclick", function(e){
-        var mp = L.circle(e.latlng, 50).addTo(map)
+        var mp = L.circle(e.latlng, 100).addTo(map)
         mp.bindPopup(e.latlng.lat + ',' + e.latlng.lng);
  }); 
  function onLocationFound(e) {
