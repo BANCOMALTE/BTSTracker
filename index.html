@@ -183,6 +183,9 @@ if( row.Bande == "~B20~") { frequenze = "B20"; iconemarker = L.icon({
 	    var marker = L.marker([row.Latitudine, row.Longitudine], {icon: iconemarker}).on('click', function(h) {
     marker.setIcon(fotografata);
 });
+	    var marker1 = L.marker([42, 15]).on('click', function(h) {
+    marker1.setIcon(fotografata);
+});
 	   
 	    marker.bindPopup("<b>LAT:</b> " + row.Latitudine + "<br /><b>LON:</b> " + row.Longitudine + "<br /><b>ENODEB:</b> " + row.eNb + "<br /><b>NOME SITO:</b> " + row.Nomesito + "<br /><b>BANDE:</b> " + frequenze + "<br /><b>PRIMO RILEVAMENTO:</b> " + row.Primorilevamento + "<br />").openPopup();
       marker.bindTooltip("<span>" + row.eNb + "</span>" , {permanent: true, direction: 'bottom'}).openTooltip();
